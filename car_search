@@ -1,0 +1,39 @@
+
+class Cars
+  def initialize(makes, models)
+    @makes = File.readlines(makes)
+    @models = File.readlines(models)
+  end
+  def get_makes
+    @makes.each do |make|
+       make
+    end
+  end
+
+  def get_models
+    @models.each do |model|
+      model
+    end
+  end
+
+  def make_hay
+    @makes_list = get_makes
+    @models_list = get_models
+
+    car_hash = {}
+    @models_list.each do |model|
+    @makes_list.each do |make|
+      if make[0] == model[0]
+        model[0,2] = ' '
+        car_hash[make.chomp] = model.chomp
+      end
+    end
+    end
+    puts car_hash
+  end
+end
+
+c = Cars.new('car_makes.txt', 'car_models.txt')
+
+
+c.make_hay

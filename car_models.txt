@@ -1,0 +1,6 @@
+T=Camry
+N=Altima
+D=Charger
+B=325
+C=Corvette
+F=Mustang
